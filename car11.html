@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarVilla - Fronx</title>
+    <link rel="icon" type="png" href="assets/logo/favicon.png">
+    <link rel="stylesheet" href="assets\css\details.css">
+    <style>
+        .car2 {
+            width: 724px;
+            top: 180px;
+            filter: contrast(1.2);
+        }
+                
+        <!--  -->
+        .tabsSection {
+            position: relative;
+            width: 100%;
+            height: 25rem;
+        }
+
+        .container1 {
+            position: relative;
+            top: 6rem;
+            padding: 10px 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .menu {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .arrow {
+            font-size: 18px;
+            color: #888;
+            cursor: pointer;
+            margin: 0 10px;
+        }
+
+        .menu-item {
+            font-size: 14px;
+            color: #888;
+            margin: 0 15px;
+            cursor: pointer;
+            position: relative;
+            font-size: 20px;
+        }
+
+        .menu-item.active {
+            color: #007bff;
+        }
+
+        .menu-item.active::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: #007bff;
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        table {
+            width: 50rem;
+            height: 12rem;
+            border-collapse: collapse;
+        }
+
+        table {
+            border: 1px solid #ddd;
+            font-size: 1.2rem;
+
+        }
+
+        tr {
+            position: relative;
+            left: 2rem;
+        }
+
+        td {
+            padding: 8px;
+            text-align: left;
+        }
+
+
+
+        .features-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .features-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .carousel {
+            display: flex;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .carousel-card {
+            min-width: 33.33%;
+            transition: transform 0.5s ease;
+            position: relative;
+            padding-left: 1rem;
+        }
+
+        .carousel-card img {
+            width: 100%;
+            display: block;
+        }
+
+        .carousel-card .card-text {
+            position: absolute;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            width: 100%;
+            padding: 10px;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .carousel-card:hover .card-text {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <!-- <div id="home" class="background"> -->
+        <div class="glass">
+            <div class="header">
+                <div class="wrap">
+                    <div class="container ">
+                        <div class="navbar-header">
+                            <div class="navbar-brand">
+                                CarVilla
+                            </div>
+                        </div>
+                        <div class="nav">
+                            <ul class="navbox">
+                                <li><a href="index1.html">home</a></li>
+                                <li><a class="active"  href="#service">Fronx</a></li>
+                                <li><a  href="index1.html#featured-cars">Price</a></li>
+                                <li><a href="index1.html#new cars">Images</a></li>
+                                <li><a href="index1.html#contact">SPECS</a></li>
+                            </ul>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- </div> -->
+    </section>
+
+    <div class="fulldetail-box">
+        <div class="car-name">
+            <p>Maruti Fronx</p>
+            <p class="star"><img src="assets/logo/star.png" alt=""><img src="assets/logo/star.png" alt=""><img
+                src="assets/logo/star.png" alt=""><img src="assets/logo/star.png" alt=""><img
+                src="assets/logo/star.png" alt=""  style="margin-right: 4px;"><span style="margin-left: 0px;">323 Rating</span></p>
+        </div>
+        <section>
+            <div class="dispaly">
+                <div class="images-box">
+                    <img class="car2" src="new cars/fronx.jpeg" alt="" width="100px">
+                    <div class="detail-box">
+                        <div class="select">
+                            <select name="" id="variant" aria-placeholder="variant">
+                                <option value="">Select Variant</option>
+                                <option value="">Petrol</option>
+                                <option value="">Desel</option>
+                                <option value="">Manual</option>
+                            </select>
+                            <select name="" id="variant" aria-placeholder="variant">
+                                <option value="">City</option>
+                                <option value="">Nagar</option>
+                                <option value="">Pune</option>
+                                <option value="">Chatrapati Sambhaji</option>
+                            </select>
+                        </div><br>
+                        <div class="pricing">
+                            <h3>Rs. 7.51 Lakh</h3>
+                            <p>On-Road Price</p>
+                        </div>
+                        <div class="EMI">
+                            <p>EMI Rs.26,010 <span>For 5 Year</span></p>
+                            <p>EMI Calcultor</p>
+                        </div>
+                        <div class="timeTake">
+                            <span>⏱</span> Waiting Periord 10-15 weeks
+                        </div>
+                        <div class="getOffer">
+                            <button><a href="booking form/booking - (12).php">Book Now</a></button>
+                        </div>
+                        <div class="features">
+                            <a href=""><span><img src="assets/logo/paint-brush.png" alt=""> Colours</span></a>
+                            <a href=""><span><img src="assets/logo/image-gallery.png" alt="" width="16rem">
+                                    Image</span></a>
+                            <a href=""><span><img src="assets/logo/play.png" alt="">Video</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </div>
+
+
+    <section class="tabsSection">
+
+        <div class="container1">
+            <div class="menu">
+                <div class="arrow" onclick="navigateTabs('left')">
+                    &lt;
+                </div>
+                <div class="menu-item active" onclick="showTab('tab1')">
+                    Key Specification
+                </div>
+                <div class="menu-item" onclick="showTab('tab2')">
+                    Top Features
+                </div>
+                <div class="menu-item" onclick="showTab('tab3')">
+                    Stand Out Features
+                </div>
+                <div class="arrow" onclick="navigateTabs('right')">
+                    &gt;
+                </div>
+            </div>
+            <div class="tab-content active" id="tab1">
+                <table>
+                    <tr>
+                        <td>
+                            Engine
+                        </td>
+                        <td style="font-weight: 700;">
+                            1997 cc - 2198 cc
+                        </td>
+                        <td>
+                            Power
+                        </td>
+                        <td style="font-weight: 700;">
+                            130 - 200 bhp
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Torque
+                        </td>
+                        <td style="font-weight: 700;">
+                            300 Nm - 400 Nm
+                        </td>
+                        <td>
+                            Seating Capaticy
+                        </td>
+                        <td style="font-weight: 700;">
+                            6, 7
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Drive Type
+                        </td>
+                        <td style="font-weight: 700;">
+                            RWD / 4WD
+                        </td>
+                        <td>
+                            Mileage
+                        </td>
+                        <td style="font-weight: 700;">
+                            15.94 kmpl
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="tab-content" id="tab2">
+                <table>
+                    <tr>
+                        <td>
+                            height Adjustable Driver Seat
+                        </td>
+                        <td>
+                            Automatic Climate Control
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Sunroof
+                        </td>
+                        <td>
+                            Powered Front Seat
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            360 Degree Camera
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="tab-content" id="tab3">
+                <div class="carousel">
+                    <div class="carousel-card">
+                        <img alt="Car feature 1" height="200"
+                            src="/assets/Mahindra-Scorpio-N-0.jpg"
+                            width="300" />
+                        <div class="card-text">
+                            Sunroof
+                        </div>
+                    </div>
+                    <div class="carousel-card">
+                        <img alt="Car feature 2" height="200"
+                            src="/assets/Mahindra-Scorpio-N-0 (1).jpg"
+                            width="300" />
+                        <div class="card-text">
+                            Drive MID
+                        </div>
+                    </div>
+                    <div class="carousel-card">
+                        <img alt="Car feature 3" height="200"
+                            src="/assets/Mahindra-Scorpio-N-0 (2).jpg"
+                            width="300" />
+                        <div class="card-text">
+                            12 Speaker 3D Sony <br>Sound System
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript for modern tab menu -->
+    <script>
+        function showTab(tabId) {
+            var tabs = document.querySelectorAll('.tab-content');
+            var menuItems = document.querySelectorAll('.menu-item');
+
+            tabs.forEach(function (tab) {
+                tab.classList.remove('active');
+            });
+
+            menuItems.forEach(function (item) {
+                item.classList.remove('active');
+            });
+
+            document.getElementById(tabId).classList.add('active');
+            document.querySelector('.menu-item[onclick="showTab(\'' + tabId + '\')"]').classList.add('active');
+        }
+
+        function navigateTabs(direction) {
+            var tabs = document.querySelectorAll('.tab-content');
+            var menuItems = document.querySelectorAll('.menu-item');
+            var activeIndex = Array.from(tabs).findIndex(tab => tab.classList.contains('active'));
+
+            if (direction === 'left') {
+                activeIndex = (activeIndex === 0) ? tabs.length - 1 : activeIndex - 1;
+            } else if (direction === 'right') {
+                activeIndex = (activeIndex === tabs.length - 1) ? 0 : activeIndex + 1;
+            }
+
+            showTab(tabs[activeIndex].id);
+        }
+    </script>
+</body>
+
+</html>
