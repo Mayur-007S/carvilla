@@ -202,13 +202,14 @@
 </html>
 <?php
 // Database connection parameters
-$host = 'localhost';
-$user = 'root';
-$password = '';
-$dbname = 'carvilla';
+$host="localhost";
+$port=3306;
+$socket="";
+$user="root";
+$password="yPB}X`8iWX/w";
+$dbname="carvilla";
 
-// Create connection
-$conn = new mysqli($host, $user, $password, $dbname);
+    $conn = new mysqli($host, $user, $password, $dbname, $port, $socket);
 
 // Check connection and set error reporting
 if ($conn->connect_error) {

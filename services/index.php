@@ -440,13 +440,14 @@
     </script>
 
     <?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "carvilla";
-    
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
+$host="localhost";
+$port=3306;
+$socket="";
+$user="root";
+$password="yPB}X`8iWX/w";
+$dbname="carvilla";
+
+    $conn = new mysqli($host, $user, $password, $dbname, $port, $socket);
     
     // Check connection
     if ($conn->connect_error) {

@@ -77,12 +77,14 @@
 <body>
 
     <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "carvilla";
+$host="localhost";
+$port=3306;
+$socket="";
+$user="root";
+$password="yPB}X`8iWX/w";
+$dbname="carvilla";
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+    $conn = new mysqli($host, $user, $password, $dbname, $port, $socket);
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);

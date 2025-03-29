@@ -1,36 +1,36 @@
 <?php 
 require_once 'Order-list.php';
 
-$servername = 'localhost';
-$username = 'root';
-$password = '';
-$database = 'carvilla';
+$host = "localhost";
+$port = 3306;
+$socket = "";
+$user = "root";
+$password = "yPB}X`8iWX/w";
+$dbname = "carvilla";
 
-try{
+$con = new mysqli($host, $user, $password, $dbname, $port, $socket);
 
-    $con = new PDO("mysql:host=$servername;dbname=$database",$username,$password);
-	$con->setAttribute(PDO::ATTR_CASE,PDO::CASE_NATURAL);
-	$con->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-
-    $SQL = "SELECT * FROM bookings WHERE email=$user_email";
-        $exec = $con->prepare($SQL);
-        $exec->execute();
-
-        echo "<pre>";
-        $result = $exec->fetchAll(PDO::FETCH_NUM);
-        // print_r($result1);
-        echo "<h1>Booking Data</h1>";
-        echo "<table border='1px solide black'><tr><th>Id</th><th>carName</th><th>model</th><th>price</th><th>clientId</th><th>name</th><th>email</th><th>phone</th><th>age</th><th>address</th><th>showroom</th></tr>";
-        foreach($result as $row1)
-        {
-            echo "<tr><td>".$row1[0]."</td><td>".$row1[1]."</td><td>".$row1[2]."</td><td>".$row1[3]."</td>
-            <td>".$row1[4]."</td><td>".$row1[5]."</td><td>".$row1[6]."</td><td>".$row1[7]."</td>
-            <td>".$row1[8]."</td><td>".$row1[9]."</td><td>".$row1[10]."</td>
-            </tr>";
-        }
-        echo"</table>";
-
-} catch (PDOException $ex) 
-{
-	echo "Connection failed: ".$ex->getMessage();
+if ($con->connect_error) {
+    die("Connection failed: " . $con->connect_error);
 }
+
+$user_email = $con->real_escape_string($user_email);
+$SQL = "SELECT * FROM bookings WHERE email='$user_email'";
+$result = $con->query($SQL);
+
+if ($result->num_rows > 0) {
+    echo "<h1>Booking Data</h1>";
+    echo "<table border='1px solid black'><tr><th>Id</th><th>carName</th><th>model</th><th>price</th><th>clientId</th><th>name</th><th>email</th><th>phone</th><th>age</th><th>address</th><th>showroom</th></tr>";
+    while($row = $result->fetch_assoc()) {
+        echo "<tr><td>".$row['id']."</td><td>".$row['carName']."</td><td>".$row['model']."</td><td>".$row['price']."</td>
+        <td>".$row['clientId']."</td><td>".$row['name']."</td><td>".$row['email']."</td><td>".$row['phone']."</td>
+        <td>".$row['age']."</td><td>".$row['address']."</td><td>".$row['showroom']."</td>
+        </tr>";
+    }
+    echo "</table>";
+} else {
+    echo "0 results";
+}
+
+$con->close();
+?>

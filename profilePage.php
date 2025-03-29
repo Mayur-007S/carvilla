@@ -11,12 +11,13 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
-        <style>
-            .UserName {
-        height: 6rem;
-        background: linear-gradient(90deg, rgba(238, 130, 238, 1) 0%, rgba(0, 209, 255, 1) 100%);
-}
-        </style>
+
+<style>
+.UserName {
+height: 6rem;
+background: linear-gradient(90deg, rgba(238, 130, 238, 1) 0%, rgba(0, 209, 255, 1100%));
+ }
+</style>
 </head>
 
 <body>
@@ -77,19 +78,39 @@
                         </nav>
                         <!-- mobile version navbar end -->
     </section>
-<div style="display: none;">
+<div>
 <?php
 
-require_once 'Order-list.php';
+session_start();
 
-try{
-    $SQL = "SELECT * FROM user WHERE Id = $user_id";
-    $exec = $con->prepare($SQL);
-    $exec->execute();
-    $result2 = $exec->fetchAll(PDO::FETCH_NUM);
+$host = "localhost";
+$port = 3306;
+$socket = "";
+$user = "root";
+$password = "yPB}X`8iWX/w";
+$dbname = "carvilla";
 
-	foreach($result2 as $row)
-	{
+$con = new mysqli($host, $user, $password, $dbname, $port, $socket);
+
+if ($con->connect_error) {
+    die("Connection failed: " . $con->connect_error);
+}
+
+$SQL = "SELECT * FROM user";
+$result = $con->query($SQL);
+
+if ($result->num_rows > 0) {
+    $result1 = $result->fetch_all(MYSQLI_NUM);
+    $new = count($result1);
+    $newId = $result1[$new-1];
+    $user_id = $newId[0];
+    $user_email = $newId[2];
+    $user_name = $newId[1];
+    echo "<pre>";
+    // print_r($result1);
+} else {
+    echo "0 results";
+}
 
 ?>
 </div>
@@ -102,14 +123,18 @@ try{
                     <div class="pimage"> </div>
                     <div class="name">
                         <div class="pname">
-                            <?php echo $row[1];  ?>
+                        <?php 
+                            echo  $user_name;  
+                        ?>
                         </div>
                         <div class="pemail">
-                        <?php echo $row[2];  ?>
+                        <?php
+                            echo   $user_email;  
+                        ?>
                         </div>
                     </div>
                     <div class="elemets">
-                        <td><img class="img1" src="assets/logo/shopping-list.png" alt="Orders">
+                        <td><img class="img1" src="assets/logo/secure.png" alt="Orders">
                             <li><a id="itext" href="bh.php">Bookins history</a>
                             </li>
                         </td>
@@ -175,14 +200,5 @@ try{
 
 
     </div>
-<?php
-    }
-} catch (PDOException $ex) 
-{
-	echo "Connection failed: ".$ex->getMessage();
-}
-
-?>
-
 </html>
 </body>
