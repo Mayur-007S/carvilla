@@ -4,27 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CarVilla - Scorpion-N</title>
-    <link rel="icon" type="png" href="assets/logo/favicon.png">
-    <link rel="stylesheet" href="assets\css\details.css">
+    <title>CarVilla - Safari</title>
+    <link rel="icon" type="png" href="../assets/logo/favicon.png">
+    <link rel="stylesheet" href="../assets/css/details.css">
     <style>
-        * {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        .car2 {
+            width: 36rem;
+            top: 14rem;
+            margin-left: 4rem;
+            /* filter: contrast(1.2); */
+            transform: scaleX(-1);
         }
-
-        .star {
-            position: absolute;
-            top: 25px;
-            width: 100%;
-        }
-
-        .star>span {
-            font-size: 17px;
-            margin-left: 25px;
-            color: rgb(80, 64, 180);
-            font-family: sans-serif;
-        }
-
         <!--  -->
         .tabsSection {
             position: relative;
@@ -182,11 +172,11 @@
                         </div>
                         <div class="nav">
                             <ul class="navbox">
-                                <li><a href="index1.html">home</a></li>
-                                <li><a class="active" href="index1.html#service">Scorpio-N</a></li>
-                                <li><a href="index1.html#featured-cars">Price</a></li>
-                                <li><a href="index1.html#new cars">Images</a></li>
-                                <li><a href="index1.html#contact">SPECS</a></li>
+                                <li><a href="../index1.html">home</a></li>
+                                <li><a class="active"  href="#service">Safari</a></li>
+                                <li><a  href="../index1.html#featured-cars">Price</a></li>
+                                <li><a href="../index1.html#new cars">Images</a></li>
+                                <li><a href="../index1.html#contact">SPECS</a></li>
                             </ul>
                             </ul>
                         </div>
@@ -197,32 +187,33 @@
 
     <div class="fulldetail-box">
         <div class="car-name">
-            <p>Mahindra Scorpio-N</p>
-            <p class="star"><img src="assets/logo/star.png" alt=""><img src="assets/logo/star.png" alt=""><img
-                    src="assets/logo/star.png" alt=""><img src="assets/logo/star.png" alt=""><img
-                    src="assets/logo/star.png" alt=""><span>323 Rating</span></p>
+            <p>Tata Safari</p>
+            <p class="star"><img src="../assets/logo/star.png" alt=""><img src="../assets/logo/star.png" alt=""><img
+                src="../assets/logo/star.png" alt=""><img src="../assets/logo/star.png" alt=""><img
+                src="../assets/logo/star.png" alt=""  style="margin-right: 4px;"><span style="margin-left: 0px;">323 Rating</span></p>
         </div>
         <section>
+            <form action="../booking form/booking.php">
             <div class="dispaly">
                 <div class="images-box">
-                    <img src="new cars/scorpio-n.jpeg" alt="">
+                    <img class="car2" src="../new cars/safari.jpeg" alt="" width="100px">
                     <div class="detail-box">
                         <div class="select">
                             <select name="" id="variant" aria-placeholder="variant">
                                 <option value="">Select Variant</option>
-                                <option value="Petrol">Petrol</option>
-                                <option value="Desel">Desel</option>
-                                <option value="Manual">Manual</option>
+                                <option value="">Petrol</option>
+                                <option value="">Desel</option>
+                                <option value="">Manual</option>
                             </select>
                             <select name="" id="variant" aria-placeholder="variant">
                                 <option value="">City</option>
-                                <option value="Nagar">Nagar</option>
-                                <option value="Pune">Pune</option>
-                                <option value="Chatrapati Sambhaji">Chatrapati Sambhaji</option>
+                                <option value="">Nagar</option>
+                                <option value="">Pune</option>
+                                <option value="">Chatrapati Sambhaji</option>
                             </select>
                         </div><br>
                         <div class="pricing">
-                            <h3>Rs. 13.60 lakh</h3>
+                            <h3>Rs. 16.19 Lakh</h3>
                             <p>On-Road Price</p>
                         </div>
                         <div class="EMI">
@@ -230,24 +221,26 @@
                             <p>EMI Calcultor</p>
                         </div>
                         <div class="timeTake">
-                            <span>⏱</span> Waiting Periord 2-3 weeks
+                            <span>⏱</span> Waiting Periord 10-15 weeks
                         </div>
                         <div class="getOffer">
-                            <button><a href="booking form/booking.php">Book Now</a></button>
+                            <button type="submit" name="Safari" style="cursor: pointer;"><a>Book Now</a></button>
                         </div>
                         <div class="features">
-                            <a href=""><span><img src="assets/logo/paint-brush.png" alt=""> Colours</span></a>
-                            <a href=""><span><img src="assets/logo/image-gallery.png" alt="" width="16rem">
+                            <a href=""><span><img src="../assets/logo/paint-brush.png" alt=""> Colours</span></a>
+                            <a href=""><span><img src="../assets/logo/image-gallery.png" alt="" width="16rem">
                                     Image</span></a>
-                            <a href=""><span><img src="assets/logo/play.png" alt="">Video</span></a>
+                            <a href=""><span><img src="../assets/logo/play.png" alt="">Video</span></a>
                         </div>
                     </div>
                 </div>
             </div>
+            </form>
         </section>
 
 
     </div>
+
 
     <section class="tabsSection">
 
@@ -344,7 +337,7 @@
                 <div class="carousel">
                     <div class="carousel-card">
                         <img alt="Car feature 1" height="200"
-                            src="./assets/Mahindra-Scorpio-N-0.jpg"
+                            src="../assets/Mahindra-Scorpio-N-0.jpg"
                             width="300" />
                         <div class="card-text">
                             Sunroof
@@ -352,7 +345,7 @@
                     </div>
                     <div class="carousel-card">
                         <img alt="Car feature 2" height="200"
-                            src="./assets/Mahindra-Scorpio-N-0 (1).jpg"
+                            src="../assets/Mahindra-Scorpio-N-0 (1).jpg"
                             width="300" />
                         <div class="card-text">
                             Drive MID
@@ -360,7 +353,7 @@
                     </div>
                     <div class="carousel-card">
                         <img alt="Car feature 3" height="200"
-                            src="./assets/Mahindra-Scorpio-N-0 (2).jpg"
+                            src="../assets/Mahindra-Scorpio-N-0 (2).jpg"
                             width="300" />
                         <div class="card-text">
                             12 Speaker 3D Sony <br>Sound System

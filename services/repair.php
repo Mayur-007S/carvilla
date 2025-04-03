@@ -12,7 +12,7 @@
         <a href="../index1.html#service"><button type="button"><span class="icon">👈</span>Back</button></a>
     </div>
     <div class="form-container">
-        <h1>Car Paint Color Selection Form</h1>
+        <h1>Car Repair Form</h1>
         <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
             <div class="input-group">
                 <span class="icon">🚗</span>
@@ -53,17 +53,12 @@
             <div class="input-group">
                 <span class="icon">🎨</span>
                 <label for="color">Select Car Color:</label>
-                <select id="color" name="color" class="color-select" required>
-                    <option value="red">Red</option>
-                    <option value="blue">Blue</option>
-                    <option value="black">Black</option>
-                    <option value="white">White</option>
-                    <option value="silver">Silver</option>
-                    <option value="green">Green</option>
-                    <option value="yellow">Yellow</option>
-                    <option value="purple">Purple</option>
-                    <option value="orange">Orange</option>
-                    <option value="gray">Gray</option>
+                <select id="color" name="repair" class="color-select" required>
+                <option disabled>Periodic Maintenance Service</option>
+                            <option value="Diagnostic Test">Diagnostic Test</option>
+                            <option value="Engine Servicing">Engine Servicing</option>
+                            <option value="Tires Replacement">Tires Replacement</option>
+                            <option value="Oil Changing">Oil Changing</option>
                 </select>
             </div>
 
@@ -102,13 +97,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Prepare and bind statement
-    $stmt = $conn->prepare("INSERT INTO car_paint (car_name, car_model, full_name, email, phone, address, color) VALUES (?, ?, ?, ?, ?, ?, ?)");
+    $stmt = $conn->prepare("INSERT INTO car_repair (car_name, car_model, full_name, email, phone, address, repair) VALUES (?, ?, ?, ?, ?, ?, ?)");
     if (!$stmt) {
         die("Error preparing statement: " . $conn->error);
     }
 
     // Bind parameters
-    $stmt->bind_param("sssssss", $carName, $carModel, $fullName, $email, $phone, $address, $color);
+    $stmt->bind_param("sssssss", $carName, $carModel, $fullName, $email, $phone, $address, $repair);
 
     // Get form data
     $carName = $_POST['carName'];
@@ -117,7 +112,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email']; 
     $phone = $_POST['phone'];
     $address = $_POST['address'];
-    $color = $_POST['color'];
+    $repair = $_POST['repair'];
 
     // Execute the statement
     if ($stmt->execute()) {

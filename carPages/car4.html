@@ -4,14 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CarVilla - Vitara</title>
-    <link rel="icon" type="png" href="assets/logo/favicon.png">
-    <link rel="stylesheet" href="assets\css\details.css">
+    <title>CarVilla - Harrier</title>
+    <link rel="icon" type="png" href="../assets/logo/favicon.png">
+    <link rel="stylesheet" href="../assets/css/details.css">
     <style>
-        .car2 {
-            width: 38rem;
-            top: 12rem;
-            margin-left: 55px;
+        .img-arrange {
+            width: 40rem;
+            top: 130px;
+            transform: scaleX(-1);
+            filter: contrast(1.2);
+        }
+        .star {
+            position: absolute;
+            top: 25px;
+            width: 100%;
+        }
+
+        .star>span {
+            font-size: 17px;
+            margin-left: 25px;
+            color: rgb(80, 64, 180);
+            font-family: sans-serif;
         }
         <!--  -->
         .tabsSection {
@@ -152,7 +165,7 @@
 
         .carousel-card:hover .card-text {
             opacity: 1;
-        }  
+        }
     </style>
 </head>
 
@@ -170,11 +183,11 @@
                         </div>
                         <div class="nav">
                             <ul class="navbox">
-                                <li><a  href="index1.html">home</a></li>
-                                <li><a class="active"  href="#service">Vitara</a></li>
-                                <li><a  href="index1.html#featured-cars">Price</a></li>
-                                <li><a href="index1.html#new cars">Images</a></li>
-                                <li><a href="index1.html#contact">SPECS</a></li>
+                                <li><a  href="../index1.html">home</a></li>
+                                <li><a class="active"  href="#service">Harrier</a></li>
+                                <li><a  href="../index1.html#featured-cars">Price</a></li>
+                                <li><a href="../index1.html#new cars">Images</a></li>
+                                <li><a href=".../index1.html#contact">SPECS</a></li>
                             </ul>
                             </ul>
                         </div>
@@ -185,15 +198,16 @@
 
     <div class="fulldetail-box">
         <div class="car-name">
-            <p>Maruti Grand Vitara</p>
-            <p class="star"><img src="assets/logo/star.png" alt=""><img src="assets/logo/star.png" alt=""><img
-                src="assets/logo/star.png" alt=""><img src="assets/logo/star.png" alt=""><img
-                src="assets/logo/star.png" alt=""  style="margin-right: -5px;"> <span style="margin-left: 0px;">323 Rating</span></p>
+            <p>Tata Harrier</p>
+            <p class="star"><img src="../assets/logo/star.png" alt=""><img src="../assets/logo/star.png" alt=""><img
+                src="../assets/logo/star.png" alt=""><img src="../assets/logo/star.png" alt=""><img
+                src="../assets/logo/star.png" alt="" style="margin-right: 4px;"><span style="margin-left: 0px;">323 Rating</span></p>
         </div>
         <section>
+            <form action="../booking form/booking.php">
             <div class="dispaly">
                 <div class="images-box">
-                    <img class="car2" src="new cars/grand.jpeg" alt="" width="100px">
+                    <img class="img-arrange" src="../new cars/harrier.png" alt="">
                     <div class="detail-box">
                         <div class="select">
                             <select name="" id="variant" aria-placeholder="variant">
@@ -210,7 +224,7 @@
                             </select>
                         </div><br>
                         <div class="pricing">
-                            <h3>Rs. 10.80 Lakh</h3>
+                            <h3>Rs. 15.49 Lakh</h3>
                             <p>On-Road Price</p>
                         </div>
                         <div class="EMI">
@@ -221,23 +235,21 @@
                             <span>⏱</span> Waiting Periord 10-15 weeks
                         </div>
                         <div class="getOffer">
-                            <button><a href="booking form/booking - (10).php">Book Now</a></button>
+                            <button type="submit" name="Harrier" style="cursor: pointer;"><a>Book Now</a></button>
                         </div>
                         <div class="features">
-                            <a href=""><span><img src="assets/logo/paint-brush.png" alt=""> Colours</span></a>
-                            <a href=""><span><img src="assets/logo/image-gallery.png" alt="" width="16rem">
+                            <a href=""><span><img src="../assets/logo/paint-brush.png" alt=""> Colours</span></a>
+                            <a href=""><span><img src="../assets/logo/image-gallery.png" alt="" width="16rem">
                                     Image</span></a>
-                            <a href=""><span><img src="assets/logo/play.png" alt="">Video</span></a>
+                            <a href=""><span><img src="../assets/logo/play.png" alt="">Video</span></a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-
-
     </div>
 
-
+    
     <section class="tabsSection">
 
         <div class="container1">
@@ -333,7 +345,7 @@
                 <div class="carousel">
                     <div class="carousel-card">
                         <img alt="Car feature 1" height="200"
-                            src="/assets/Mahindra-Scorpio-N-0.jpg"
+                            src="../assets/Mahindra-Scorpio-N-0.jpg"
                             width="300" />
                         <div class="card-text">
                             Sunroof
@@ -341,7 +353,7 @@
                     </div>
                     <div class="carousel-card">
                         <img alt="Car feature 2" height="200"
-                            src="/assets/Mahindra-Scorpio-N-0 (1).jpg"
+                            src="../assets/Mahindra-Scorpio-N-0 (1).jpg"
                             width="300" />
                         <div class="card-text">
                             Drive MID
@@ -349,7 +361,7 @@
                     </div>
                     <div class="carousel-card">
                         <img alt="Car feature 3" height="200"
-                            src="/assets/Mahindra-Scorpio-N-0 (2).jpg"
+                            src="../assets/Mahindra-Scorpio-N-0 (2).jpg"
                             width="300" />
                         <div class="card-text">
                             12 Speaker 3D Sony <br>Sound System
@@ -392,6 +404,7 @@
             showTab(tabs[activeIndex].id);
         }
     </script>
+
 </body>
 
 </html>

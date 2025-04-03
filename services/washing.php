@@ -4,123 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Car Wash Form</title>
-    <style>
-        /* General form styling */
-        .form-container {
-            width: 100%;
-            max-width: 500px;
-            margin: auto;
-            padding: 20px;
-            background: linear-gradient(135deg, #e0eafc, #cfdef3);
-            border-radius: 15px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            text-align: center;
-            color: #333;
-            font-size: 28px;
-            margin-bottom: 25px;
-            font-family: 'Arial', sans-serif;
-        }
-
-        .input-group {
-            margin-bottom: 20px;
-            position: relative; /* To position the icon */
-        }
-
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-            color: #333;
-            font-family: 'Verdana', sans-serif;
-        }
-
-        /* Input styling */
-        input[type="text"],
-        input[type="email"],
-        input[type="tel"],
-        select {
-            width: 100%;
-            padding: 12px 12px 12px 50px; /* Add padding for the icon */
-            font-size: 16px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            box-sizing: border-box;
-            transition: 0.3s;
-            background-color: #f7f9fc;
-            color: #333;
-        }
-
-        input[type="text"]:focus,
-        input[type="email"]:focus,
-        input[type="tel"]:focus,
-        select:focus {
-            border-color: #74b9ff;
-            background-color: #eaf3ff;
-            box-shadow: 0 0 8px rgba(116, 185, 255, 0.5);
-            outline: none;
-        }
-
-        /* Icon styling */
-        .input-group .icon {
-            position: absolute;
-            left: 12px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 24px; /* Increased icon size */
-            color: #888; /* Icon color */
-        }
-
-        /* Styling for submit button */
-        button {
-            width: 100%;
-            padding: 12px;
-            background-color: rgb(2, 213, 2);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 18px;
-            cursor: pointer;
-            transition: background-color 0.3s ease, box-shadow 0.3s ease;
-            font-family: 'Arial', sans-serif;
-        }
-
-        button:hover {
-            background-color: rgb(2, 110, 2);
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Styling for placeholder text */
-        input::placeholder {
-            color: #999;
-        }
-        .backButton{
-            position: absolute;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 30%;
-            height: 10%;
-        }
-        .backButton button{
-            width: 100%;
-            padding: 12px;
-            background-color: rgb(52 2 213 / 69%);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 18px;
-            cursor: pointer;
-            transition: background-color 0.3s ease, box-shadow 0.3s ease;
-            font-family: 'Arial', sans-serif;
-        }
-        .backButton button:hover {
-            background-color: rgb(7, 2, 110);
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        }
-    </style>
+    <link rel="stylesheet" href="./service.css">
 </head>
 <body>
 <div class="backButton">
@@ -211,7 +95,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Prepare and bind statement
-    $stmt = $conn->prepare("INSERT INTO car_wash_details (car_name, car_model, full_name, email, phone, address, wash_type) VALUES (?, ?, ?, ?, ?, ?, ?)");
+    $stmt = $conn->prepare("INSERT INTO car_wash (car_name, car_model, full_name, email, phone, address, wash_type) VALUES (?, ?, ?, ?, ?, ?, ?)");
     if (!$stmt) {
         die("Error preparing statement: " . $conn->error);
     }
@@ -223,7 +107,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $carName = $_POST['carName'];
     $carModel = $_POST['model'];
     $fullName = $_POST['name'];
-    $email = $_POST['email'];
+    $email = $_POST['email']; 
     $phone = $_POST['phone'];
     $address = $_POST['address'];
     $washType = $_POST['washType'];
@@ -232,6 +116,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($stmt->execute()) {
         // Display a confirmation message
         echo "<script>alert('New record created successfully');</script>";
+        header("Location: ../index1.html#service"); // Redirect to the service section after submission
+        exit(); // Ensure no further code is executed after redirection
     } else {
         echo "Error: " . $stmt->error;
     }

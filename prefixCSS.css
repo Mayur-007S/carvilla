@@ -37,7 +37,8 @@ body {
 .background {
     position: relative;
     z-index: 1;
-    background-image: url("assets/images/welcome-hero/welcome-banner1.jpg ");
+    /* background-image: url("assets/images/welcome-hero/welcome-banner1.jpg "); */
+    background: url("../assets/images/welcome-hero/bg.jpg");
     /* background-position: ; */
     background-size: contain;
     -o-object-fit: contain;

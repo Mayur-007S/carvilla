@@ -148,8 +148,8 @@ if ($result->num_rows > 0) {
                 </div>
                 <div class="logout">
                     <hr>
-                    <img class="img5" src="assets/logo/do-not-disturb.png" alt=""><a class="logoutButton" href=""
-                        id="logoutText">Logout</a>
+                    <img class="img5" src="assets/logo/do-not-disturb.png" alt=""><button class="logoutButton"
+                        id="logoutText">Logout</button>
                 </div>
             </div>
         </section>

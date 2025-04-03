@@ -1,21 +1,21 @@
 <?php 
 require_once 'Order-list.php';
 
-$useremail = $newId[2];
-print($useremail);
+print($user_email);
 
-$servername = 'localhost';
-$username = 'root';
-$password = '';
-$database = 'carvilla';
+$host = "localhost";
+$port = 3306;
+$socket = "";
+$user = "root";
+$password = "yPB}X`8iWX/w";
+$dbname = "carvilla";
+
 
 try{
 
-    $con = new PDO("mysql:host=$servername;dbname=$database",$username,$password);
-	$con->setAttribute(PDO::ATTR_CASE,PDO::CASE_NATURAL);
-	$con->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+    $con = new mysqli($host, $user, $password, $dbname, $port, $socket);
 
-    $SQL = "SELECT * FROM bookings ";
+    $SQL = "SELECT * FROM bookings WHERE email = '$useremail'";
         $exec = $con->prepare($SQL);
         $exec->execute();
 

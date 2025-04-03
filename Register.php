@@ -232,9 +232,10 @@ $dbname="carvilla";
             $insertQuery->bind_param("sss", $fullname, $email, $password);
 
             if ($insertQuery->execute()) {
-                
-                header("Location: index1.html");
-                exit();
+                echo '<div class="success-message">Registration successful! Redirecting to login page...</div>';
+                header("Refresh: 3; url=Login.php");
+               
+              exit();
             } else {
                 echo "Error: " . $insertQuery->error;
             }

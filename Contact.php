@@ -16,6 +16,7 @@
     <style>
         body {
             background-color: rgb(205, 202, 202);
+            overflow: hidden;
         }
 
         .form-container {
@@ -177,11 +178,11 @@
             <div class="main-form">
                 <div class="logo-brand" style="display: flex; gap: 10px;">
                     <img src="./assets/logo/favicon.png" alt="logo" style="width: 25px; height: 25px;">
-                    <h1 style="color: white;">CarVilla</h1>
+                    <h1 style="color: black;">CARVILLA</h1>
                 </div>
-                <div class="form-title" style="margin-top: 2rem;">
+                <div class="form-title" style="margin-top: 2rem; width:20rem;">
                     <h1>We'd love to help</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio ex totam, aliquid modi inventore
+                    <p style="font-size: 14px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio ex totam, aliquid modi inventore
                         obcaecati ad sequi vero, voluptas earum voluptatibus optio. Officiis, laudantium delectus.</p>
                 </div>
                 <div class="input-field" style="display: flex; flex-direction: column; margin-top: 2rem;">
@@ -259,6 +260,17 @@
                 </div>
                
             </div>
+        </div>
+    </section>
+
+
+    <section>
+        <div class="background-img">
+            <img src=".\assets\images\form\formlogo.svg" alt="" width="80%" height="80%"
+                style=" position: absolute;
+                        top: 7rem;
+                       left: 26.7rem;
+                        z-index: -1;">
         </div>
     </section>
 
