@@ -173,6 +173,18 @@ CREATE TABLE `car_repair` (
   PRIMARY KEY (`repairID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
 ```
+6. CONTACT TABLE
+```bash
+CREATE TABLE `contact` (
+  `contactID` int NOT NULL AUTO_INCREMENT,
+  `fullname` varchar(45) DEFAULT NULL,
+  `email` varchar(45) DEFAULT NULL,
+  `phoneno` varchar(15) DEFAULT NULL,
+  `address` varchar(45) DEFAULT NULL,
+  `feedback` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`contactID`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+```
 
 ## License
 This project is licensed under the MIT License - see the LICENSE file for details.
