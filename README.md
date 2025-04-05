@@ -97,6 +97,83 @@ We welcome contributions to CARVILLA! Please follow these steps:
 4. Push to the branch (git push origin feature/AmazingFeature)
 5. Open a Pull Request
 
+## CRAETE SQL TABLE 
+
+1. USER TABLE
+ ```bash
+   CREATE TABLE `user` (
+  `uid` int NOT NULL AUTO_INCREMENT,
+  `fullname` varchar(100) DEFAULT NULL,
+  `email` varchar(45) DEFAULT NULL,
+  `password` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`uid`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+```
+
+3. BOOKING TABLE
+```bash
+- CREATE TABLE `bookings` (
+  `bookingID` int NOT NULL AUTO_INCREMENT,
+  `username` varchar(45) DEFAULT NULL,
+  `email` varchar(45) DEFAULT NULL,
+  `phone` varchar(15) DEFAULT NULL,
+  `age` int DEFAULT NULL,
+  `address` varchar(45) DEFAULT NULL,
+  `carName` varchar(45) DEFAULT NULL,
+  `model` varchar(45) DEFAULT NULL,
+  `price` int DEFAULT NULL,
+  `showroom` varchar(200) DEFAULT NULL,
+  `clientId` int DEFAULT NULL,
+  PRIMARY KEY (`bookingID`),
+  KEY `ClientID_idx` (`clientId`),
+  CONSTRAINT `ClientID` FOREIGN KEY (`clientId`) REFERENCES `user` (`uid`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+```
+4. CAR PAINT TABLE
+```bash
+CREATE TABLE `car_paint` (
+  `colorID` int NOT NULL AUTO_INCREMENT,
+  `car_name` varchar(45) DEFAULT NULL,
+  `car_model` varchar(45) DEFAULT NULL,
+  `full_name` varchar(45) DEFAULT NULL,
+  `email` varchar(45) DEFAULT NULL,
+  `phone` varchar(15) DEFAULT NULL,
+  `address` varchar(45) DEFAULT NULL,
+  `color` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`colorID`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+```
+
+5. CAR WAH TABLE
+```bash
+CREATE TABLE `car_wash` (
+  `wid` int NOT NULL AUTO_INCREMENT,
+  `car_name` varchar(45) DEFAULT NULL,
+  `car_model` varchar(45) DEFAULT NULL,
+  `full_name` varchar(45) DEFAULT NULL,
+  `email` varchar(45) DEFAULT NULL,
+  `phone` varchar(15) DEFAULT NULL,
+  `address` varchar(45) DEFAULT NULL,
+  `wash_type` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`wid`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+```
+
+5. CAR REPAIER TABLE
+```bash
+CREATE TABLE `car_repair` (
+  `repairID` int NOT NULL AUTO_INCREMENT,
+  `car_name` varchar(45) DEFAULT NULL,
+  `car_model` varchar(45) DEFAULT NULL,
+  `full_name` varchar(45) DEFAULT NULL,
+  `email` varchar(45) DEFAULT NULL,
+  `phone` varchar(15) DEFAULT NULL,
+  `address` varchar(45) DEFAULT NULL,
+  `repair` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`repairID`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+```
+
 ## License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
