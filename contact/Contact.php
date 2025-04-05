@@ -122,11 +122,11 @@
                             </div>
                             <div class="nav">
                                 <ul class="navbox">
-                                    <li><a class="active" href="#home">home</a></li>
-                                    <li><a href="#service">service</a></li>
-                                    <li><a href="#featured-cars">featured cars</a></li>
-                                    <li><a href="#new-cars">new cars</a></li>
-                                    <li><a href="./Contact Us.html">Contact Us</a></li>
+                                    <li><a href="../index1.html">home</a></li>
+                                    <li><a href="../index1.html#service">service</a></li>
+                                    <li><a href="../index1.html#featured-cars">featured cars</a></li>
+                                    <li><a href="../index1.html#new-cars">new cars</a></li>
+                                    <li><a class="active" href="./Contact Us.html">Contact Us</a></li>
                                 </ul>
                                 </ul>
                             </div>

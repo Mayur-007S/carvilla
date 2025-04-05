@@ -135,7 +135,7 @@ if ($result->num_rows > 0) {
                     </div>
                     <div class="elemets">
                         <td><img class="img1" src="assets/logo/secure.png" alt="Orders">
-                            <li><a id="itext" href="bh.php">Bookins history</a>
+                            <li><a id="itext" href="./bookingHistory/bh.php">Bookins history</a>
                             </li>
                         </td>
                         <td><img class="img2" src="assets/logo/secure.png" alt="Security">
@@ -156,7 +156,7 @@ if ($result->num_rows > 0) {
 
         <section class="information">
             <div class="orderBox">
-                <a href="bh.php" style="color: rgb(255, 255, 255);">
+                <a href="./bookingHistory/bh.php" style="color: rgb(255, 255, 255);">
                     <div class="orderB b1">
                         <img class="l1" src="/carvilla/assets/logo/refresh.png" alt="icon"><span>Bookins history</span>
                         <p class="btext">Welcome to our bookings section</p>
