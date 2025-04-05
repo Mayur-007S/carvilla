@@ -192,7 +192,7 @@
                             <label for="fname">Fullname</label> <label for="fname">Email</label>
                         </div>
                         <div class="name-email filed" style="margin-bottom: 1.5rem;">
-                            <input type="text" name="name" id="name" placeholder="Fullname" required>
+                            <input type="text" name="fullname" id="name" placeholder="Fullname" required>
                             <input type="email" name="email" id="email" placeholder="Email" required>
                         </div>
                         <div class="filed"
@@ -298,32 +298,21 @@ if ($conn->connect_error) {
 // Prepare and bind only if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    // Validate form fields
-    if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-        die("Invalid email format");
-    }
-
-    if (!preg_match("/^[0-9]{10}$/", $_POST['phone'])) {
-        die("Invalid phone number format, should be 10 digits.");
-    }
-
         // Get form data
-        $carName = $_POST['carName'];
-        $carModel = $_POST['model'];
-        $fullName = $_POST['name'];
+        $fullname = $_POST['fullname'];
         $email = $_POST['email'];
         $phoneNumber = $_POST['phone'];
         $address = $_POST['address'];
-        $color = $_POST['color'];
+        $feedback = $_POST['feedback'];
 
     // Prepare and bind statement
-    $stmt = $conn->prepare("INSERT INTO CarPaint(full_name, email, phoneNumber, address, car_name, car_model, color) VALUES (?, ?, ?, ?, ?, ?, ?)");
+    $stmt = $conn->prepare("INSERT INTO contact (fullname,email,phoneno,address,feedback) values (?,?,?,?,?)");
     if (!$stmt) {
         die("Error preparing statement: " . $conn->error);
     }
     
     // Bind parameters
-    $stmt->bind_param("sssssss", $fullName, $email, $phoneNumber, $address, $carName, $carModel, $color);
+    $stmt->bind_param("sssss", $fullname, $email, $phoneNumber, $address, $feedback);
 
     // Execute the statement
     if ($stmt->execute()) {
