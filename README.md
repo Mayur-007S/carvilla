@@ -140,8 +140,9 @@ CREATE TABLE `car_paint` (
   `phone` varchar(15) DEFAULT NULL,
   `address` varchar(45) DEFAULT NULL,
   `color` varchar(45) DEFAULT NULL,
+  `location` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`colorID`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
 ```
 
 5. CAR WAH TABLE
@@ -155,8 +156,9 @@ CREATE TABLE `car_wash` (
   `phone` varchar(15) DEFAULT NULL,
   `address` varchar(45) DEFAULT NULL,
   `wash_type` varchar(45) DEFAULT NULL,
+  `location` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`wid`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
 ```
 
 5. CAR REPAIER TABLE
@@ -170,8 +172,9 @@ CREATE TABLE `car_repair` (
   `phone` varchar(15) DEFAULT NULL,
   `address` varchar(45) DEFAULT NULL,
   `repair` varchar(45) DEFAULT NULL,
+  `location` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`repairID`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
 ```
 6. CONTACT TABLE
 ```bash
