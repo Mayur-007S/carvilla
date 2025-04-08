@@ -51,6 +51,22 @@
             </div>
 
             <div class="input-group">
+                <span class="icon">🌍</span>
+                <label for="location">Select location:</label>
+                <select id="color" name="location" class="color-select" required>
+                    <option value="Ahilyanagar" readonly>Ahilyanagar</option>
+                    <option
+                        value="TATA Motors Showroom, Ground Floor, Nagar, Pune Highway, Kedgoav, Ahilyanagar, Maharastra, 414005">
+                        TATA Motors Showroom:- Nagar, Pune Highway, Kedgoav,Ahilyanagar
+                    </option>
+                    <option value="Mahendra Motors Showroom, Shivaji Nagar, Ahilyanagar, Maharastra, 414001">
+                        Mahendra Motors Showroom:- Shivaji Nagar,Ahilyanagar
+                    </option>
+                </select>
+            </div>
+
+
+            <div class="input-group">
                 <span class="icon">🎨</span>
                 <label for="color">Select Car Repair Type:</label>
                 <select id="color" name="repair" class="color-select" required>
@@ -97,13 +113,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Prepare and bind statement
-    $stmt = $conn->prepare("INSERT INTO car_repair (car_name, car_model, full_name, email, phone, address, repair) VALUES (?, ?, ?, ?, ?, ?, ?)");
+    $stmt = $conn->prepare("INSERT INTO car_repair (car_name, car_model, full_name, email, phone, address, repair,location) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
     if (!$stmt) {
         die("Error preparing statement: " . $conn->error);
     }
 
     // Bind parameters
-    $stmt->bind_param("sssssss", $carName, $carModel, $fullName, $email, $phone, $address, $repair);
+    $stmt->bind_param("ssssssss", $carName, $carModel, $fullName, $email, $phone, $address, $repair,$location);
 
     // Get form data
     $carName = $_POST['carName'];
@@ -113,6 +129,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $phone = $_POST['phone'];
     $address = $_POST['address'];
     $repair = $_POST['repair'];
+    $location = $_POST['location'];
 
     // Execute the statement
     if ($stmt->execute()) {

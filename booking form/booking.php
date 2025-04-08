@@ -118,7 +118,7 @@ if ($conn->connect_error) {
                 </div>
                 <div class="form-group">
                     <label for="price">Price:</label>
-                    <input type="text" id="price" name="price" readonly value="13.60 lac">
+                    <input type="text" id="price" name="price" readonly value="13.60 lakhs">
                 </div>
                 <div class="form-group">
                     <label for="name">Your Name:</label>

@@ -1,12 +1,13 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Car Customization Form</title>
     <link rel="stylesheet" href="./service.css">
 </head>
+
 <body>
     <div class="backButton">
         <a href="../index1.html#service"><button type="button"><span class="icon">👈</span>Back</button></a>
@@ -51,6 +52,21 @@
             </div>
 
             <div class="input-group">
+                <span class="icon">🌍</span>
+                <label for="location">Select location:</label>
+                <select id="color" name="location" class="color-select" required>
+                    <option value="Ahilyanagar" readonly>Ahilyanagar</option>
+                    <option
+                        value="TATA Motors Showroom, Ground Floor, Nagar, Pune Highway, Kedgoav, Ahilyanagar, Maharastra, 414005">
+                        TATA Motors Showroom:- Nagar, Pune Highway, Kedgoav,Ahilyanagar
+                    </option>
+                    <option value="Mahendra Motors Showroom, Shivaji Nagar, Ahilyanagar, Maharastra, 414001">
+                        Mahendra Motors Showroom:- Shivaji Nagar,Ahilyanagar
+                    </option>
+                </select>
+            </div>
+
+            <div class="input-group">
                 <span class="icon">🎨</span>
                 <label for="color">Select Car Color:</label>
                 <select id="color" name="color" class="color-select" required>
@@ -71,6 +87,7 @@
         </form>
     </div>
 </body>
+
 </html>
 
 <?php
@@ -102,13 +119,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Prepare and bind statement
-    $stmt = $conn->prepare("INSERT INTO car_paint (car_name, car_model, full_name, email, phone, address, color) VALUES (?, ?, ?, ?, ?, ?, ?)");
+    $stmt = $conn->prepare("INSERT INTO car_paint (car_name, car_model, full_name, email, phone, address, color,location) VALUES (?, ?, ?, ?, ?, ?, ?,?)");
     if (!$stmt) {
         die("Error preparing statement: " . $conn->error);
     }
 
     // Bind parameters
-    $stmt->bind_param("sssssss", $carName, $carModel, $fullName, $email, $phone, $address, $color);
+    $stmt->bind_param("ssssssss", $carName, $carModel, $fullName, $email, $phone, $address, $color,$location);
 
     // Get form data
     $carName = $_POST['carName'];
@@ -118,6 +135,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $phone = $_POST['phone'];
     $address = $_POST['address'];
     $color = $_POST['color'];
+    $location = $_POST['location'];
 
     // Execute the statement
     if ($stmt->execute()) {
