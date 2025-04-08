@@ -52,7 +52,7 @@
 
             <div class="input-group">
                 <span class="icon">🎨</span>
-                <label for="color">Select Car Color:</label>
+                <label for="color">Select Car Repair Type:</label>
                 <select id="color" name="repair" class="color-select" required>
                 <option disabled>Periodic Maintenance Service</option>
                             <option value="Diagnostic Test">Diagnostic Test</option>
